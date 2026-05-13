@@ -1,0 +1,32 @@
+pip install modal
+python3 -m modal setup
+
+Run some code
+You're ready to run some code! To get started, here is a minimal script that computes the square of 42:
+
+import modal
+
+app = modal.App("example-get-started")
+
+
+@app.function()
+def square(x):
+    print("This code is running on a remote worker!")
+    return x**2
+
+
+@app.local_entrypoint()
+def main():
+    print("the square is", square.remote(42))
+Copy
+Save the code to a local file such as:
+
+cat > get_started.py # At the prompt, paste the snippet and Ctrl-D to save it.
+Copy
+modal run get_started.py
+
+
+modal token set --token-id ak-tH44FiASyGVShTHw2fwRgQ --token-secret as-eajEdml9m0paxx2EvN1SW9 
+
+MODAL_TOKEN_ID=ak-tH44FiASyGVShTHw2fwRgQ
+MODAL_TOKEN_SECRET=as-eajEdml9m0paxx2EvN1SW9
