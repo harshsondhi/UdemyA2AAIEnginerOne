@@ -45,6 +45,9 @@ secrets.*
 *.log
 tmp/
 temp/
+temp.txt
+notes.md
+yes
 
 # Java/class artifacts
 *.class
